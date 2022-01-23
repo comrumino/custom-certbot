@@ -1,0 +1,6 @@
+[Unit]
+Description=Let's Encrypt renewal
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew --quiet --agree-tos --pre-hook "/usr/bin/custom-certbot-hook pre-hook" --post-hook "/usr/bin/custom-certbot-hook post-hook"
